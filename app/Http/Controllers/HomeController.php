@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Menu;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -16,11 +17,11 @@ class HomeController extends Controller
     public function index()
     {
         $menu =  Menu::all();
-        return view('home',compact('menu'));
+        return view('home', compact('menu'));
     }
     public function login(Request $request)
     {
-        if (Auth::attempt($request->only('email','password'))) {
+        if (Auth::attempt($request->only('email', 'password'))) {
             return redirect()->refresh();
         }
         return redirect()->back();
@@ -43,7 +44,9 @@ class HomeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([]);
+        User::create($request->all());
+        return redirect()->refresh();
     }
 
     /**
@@ -65,7 +68,7 @@ class HomeController extends Controller
      */
     public function edit($id)
     {
-        //
+        
     }
 
     /**
