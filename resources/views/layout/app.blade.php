@@ -48,6 +48,7 @@
                 @endauth
             </div>
         </div>
+        </div>
     </nav>
     <div class="modal fade" role="dialog" tabindex="-1" id="signIn">
         <div class="modal-dialog" role="document">
@@ -60,19 +61,20 @@
                     <div class="input-group mb-2">
                         <div class="input-group-prepend"><span class="input-group-text">
                                 <ion-icon name="person"></ion-icon>
-                            </span></div><input class="form-control" type="text" placeholder="Username">
+                            </span></div><input class="form-control" type="text" placeholder="Username" name="username">
                         <div class="input-group-append"></div>
                     </div>
                     <div class="input-group">
                         <div class="input-group-prepend"><span class="input-group-text">
                                 <ion-icon name="lock-closed"></ion-icon>
-                            </span></div><input class="form-control" type="text" placeholder="Password">
+                            </span></div><input class="form-control" type="text" placeholder="Password" name="password">
                         <div class="input-group-append"></div>
                     </div>
                 </div>
                 <div class="modal-footer"><button class="btn btn-primary" type="button">Submit</button></div>
             </div>
         </div>
+        <div class="modal-footer"><button class="btn btn-primary" type="button">Submit</button></div>
     </div>
     <div class="modal fade" role="dialog" tabindex="-1" id="signUp">
         <div class="modal-dialog" role="document">
@@ -85,31 +87,32 @@
                     <div class="input-group mb-2">
                         <div class="input-group-prepend"><span class="input-group-text">
                                 <ion-icon name="person"></ion-icon>
-                            </span></div><input class="form-control" type="text" placeholder="Username">
+                            </span></div><input class="form-control" type="text" placeholder="Username" name="username">
                         <div class="input-group-append"></div>
                     </div>
                     <div class="input-group mb-2">
                         <div class="input-group-prepend"><span class="input-group-text">
                                 <ion-icon name="mail"></ion-icon>
-                            </span></div><input class="form-control" type="text" placeholder="Email">
+                            </span></div><input class="form-control" type="text" placeholder="Email" name="email">
                         <div class="input-group-append"></div>
                     </div>
                     <div class="input-group mb-2">
                         <div class="input-group-prepend"><span class="input-group-text">
                                 <ion-icon name="lock-closed"></ion-icon>
-                            </span></div><input class="form-control" type="text" placeholder="Password">
+                            </span></div><input class="form-control" type="text" placeholder="Password" name="password">
                         <div class="input-group-append"></div>
                     </div>
                     <div class="input-group">
                         <div class="input-group-prepend"><span class="input-group-text">
                                 <ion-icon name="call"></ion-icon>
-                            </span></div><input class="form-control" type="text" placeholder="No. HP">
+                            </span></div><input class="form-control" type="text" placeholder="No. HP" name="hp">
                         <div class="input-group-append"></div>
                     </div>
                 </div>
-                <div class="modal-footer"><button class="btn btn-primary" type="button">Submit</button></div>
             </div>
+            <div class="modal-footer"><button class="btn btn-primary" type="button">Submit</button></div>
         </div>
+    </div>
     </div>
     @yield('isi')
     <div class="footer-basic">
