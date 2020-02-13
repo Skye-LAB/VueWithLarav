@@ -70,9 +70,9 @@
                             </span></div><input class="form-control" type="text" placeholder="Password" name="password">
                         <div class="input-group-append"></div>
                     </div>
-                </div>
                 <div class="modal-footer"><button class="btn btn-primary" type="button">Submit</button></div>
             </div>
+        </div>
         </div>
     </div>
     <div class="modal fade" role="dialog" tabindex="-1" id="signUp">
@@ -112,9 +112,10 @@
                             <div class="input-group-append"></div>
                         </div>
                     </div>
-                </div>
-            <div class="modal-footer"><button class="btn btn-primary" type="button">Submit</button></div>
+            <div class="modal-footer"><button class="btn btn-primary" type="submit">Submit</button></div>
         </div>
+    </div>
+</form>
         </div>
     </div>
     </div>
