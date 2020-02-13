@@ -36,6 +36,7 @@ class DatabaseSeeder extends Seeder
                 'username' => $faker->userName,
                 'email' => $faker->email,
                 'password' => bcrypt($faker->shuffleString(24)),
+                'hp' => $faker->phoneNumber,
                 'position' => $faker->randomElement(['cashier', 'admin', 'chef', 'guest'])
             ]);
         }

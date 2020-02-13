@@ -74,7 +74,6 @@
                 <div class="modal-footer"><button class="btn btn-primary" type="button">Submit</button></div>
             </div>
         </div>
-        <div class="modal-footer"><button class="btn btn-primary" type="button">Submit</button></div>
     </div>
     <div class="modal fade" role="dialog" tabindex="-1" id="signUp">
         <div class="modal-dialog" role="document">
@@ -109,8 +108,8 @@
                         <div class="input-group-append"></div>
                     </div>
                 </div>
-            </div>
             <div class="modal-footer"><button class="btn btn-primary" type="button">Submit</button></div>
+        </div>
         </div>
     </div>
     </div>
