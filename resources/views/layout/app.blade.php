@@ -23,8 +23,15 @@
             <form class="form-inline mr-auto" target="_self">
                 <div class="form-group"><span for="search-field"><ion-icon name="search"></ion-icon></span><input class="form-control search-field" type="search" id="search-field" name="search"></div>
             </form><a class="btn btn-light action-button mr-1" role="button" href="#" data-toggle="modal" data-target="#signUp">Sign Up</a><a class="btn btn-light action-button" role="button" href="#" data-target="#signIn" data-toggle="modal">Sign in</a>
-            <div
-                class="modal fade" role="dialog" tabindex="-1" id="signIn">
+{{--            <ul class="nav navbar-nav ml-auto">--}}
+{{--                <li class="dropdown nav-item"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#">Options</a>--}}
+{{--                    <div class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation" href="#">Change Password</a><a class="dropdown-item" role="presentation" href="#">Logout</a></div>--}}
+{{--                </li>--}}
+{{--            </ul>--}}
+        </div>
+    </div>
+</nav>
+            <div class="modal fade" role="dialog" tabindex="-1" id="signIn">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -43,7 +50,6 @@
                     </div>
                 </div>
             </div>
-        </div>
         <div class="modal fade" role="dialog" tabindex="-1" id="signUp">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -71,8 +77,6 @@
                 </div>
             </div>
         </div>
-    </div>
-</nav>
 @yield('isi')
 <div class="footer-basic">
     <footer>

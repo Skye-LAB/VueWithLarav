@@ -15,7 +15,7 @@
                     <div class="card-body">
                         <h5 class="card-title">{{$m->nama_menu}}</h5>
                         <h6 class="text-muted card-subtitle mb-2">Price: {{$m->harga}}</h6>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <button class="btn btn-outline-primary">Order</button>
                     </div>
                 </div>
             </div>

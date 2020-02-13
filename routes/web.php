@@ -12,3 +12,6 @@
 */
 
 Route::resource('/', 'HomeController');
+Route::get('/admin', function () {
+    return view('admin');
+});
