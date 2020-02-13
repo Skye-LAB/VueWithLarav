@@ -44,8 +44,17 @@ class HomeController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([]);
-        User::create($request->all());
+        $request->validate([
+            'username' => 'required',
+            'email' => 'required',
+            'password' => 'required',
+        ]);
+        User::create([
+            'username' => $request->username,
+            'email' => $request->email,
+            'password' => bcrypt($request->password),
+            'position' => 'member'
+        ]);
         return redirect()->refresh();
     }
 
@@ -68,7 +77,6 @@ class HomeController extends Controller
      */
     public function edit($id)
     {
-        
     }
 
     /**

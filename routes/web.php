@@ -1,7 +1,7 @@
 <?php
 
 /*
-|--------------------------------------------------------------------------
+|-------------------------------------------------------------------------- 
 | Web Routes
 |--------------------------------------------------------------------------
 |
@@ -11,7 +11,13 @@
 |
 */
 
+use Illuminate\Support\Facades\Route;
+
 Route::resource('/', 'HomeController');
 Route::get('/admin', function () {
     return view('admin');
+});
+Route::group(['middleware' => 'auth'], function () {
+    Route::resource('/admin/menu', 'MenuController');
+    Route::resource('/admin/employee', 'EmployeeController');
 });
