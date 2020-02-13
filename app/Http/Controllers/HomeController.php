@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Menu;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -17,7 +18,13 @@ class HomeController extends Controller
         $menu =  Menu::all();
         return view('home',compact('menu'));
     }
-
+    public function login(Request $request)
+    {
+        if (Auth::attempt($request->only('email','password'))) {
+            return redirect()->refresh();
+        }
+        return redirect()->back();
+    }
     /**
      * Show the form for creating a new resource.
      *
