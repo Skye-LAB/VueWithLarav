@@ -38,11 +38,11 @@
                             <h4 class="modal-title">Sign In</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
                         <div class="modal-body">
                             <div class="input-group mb-2">
-                                <div class="input-group-prepend"><span class="input-group-text"><ion-icon name="person"></ion-icon></span></div><input class="form-control" type="text" placeholder="Username">
+                                <div class="input-group-prepend"><span class="input-group-text"><ion-icon name="person"></ion-icon></span></div><input class="form-control" type="text" placeholder="Username" name="username">
                                 <div class="input-group-append"></div>
                             </div>
                             <div class="input-group">
-                                <div class="input-group-prepend"><span class="input-group-text"><ion-icon name="lock-closed"></ion-icon></span></div><input class="form-control" type="text" placeholder="Password">
+                                <div class="input-group-prepend"><span class="input-group-text"><ion-icon name="lock-closed"></ion-icon></span></div><input class="form-control" type="text" placeholder="Password" name="password">
                                 <div class="input-group-append"></div>
                             </div>
                         </div>
@@ -57,19 +57,19 @@
                         <h4 class="modal-title">Sign Up</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
                     <div class="modal-body">
                         <div class="input-group mb-2">
-                            <div class="input-group-prepend"><span class="input-group-text"><ion-icon name="person"></ion-icon></span></div><input class="form-control" type="text" placeholder="Username">
+                            <div class="input-group-prepend"><span class="input-group-text"><ion-icon name="person"></ion-icon></span></div><input class="form-control" type="text" placeholder="Username" name="username">
                             <div class="input-group-append"></div>
                         </div>
                         <div class="input-group mb-2">
-                            <div class="input-group-prepend"><span class="input-group-text"><ion-icon name="mail"></ion-icon></span></div><input class="form-control" type="text" placeholder="Email">
+                            <div class="input-group-prepend"><span class="input-group-text"><ion-icon name="mail"></ion-icon></span></div><input class="form-control" type="text" placeholder="Email" name="email">
                             <div class="input-group-append"></div>
                         </div>
                         <div class="input-group mb-2">
-                            <div class="input-group-prepend"><span class="input-group-text"><ion-icon name="lock-closed"></ion-icon></span></div><input class="form-control" type="text" placeholder="Password">
+                            <div class="input-group-prepend"><span class="input-group-text"><ion-icon name="lock-closed"></ion-icon></span></div><input class="form-control" type="text" placeholder="Password" name="password">
                             <div class="input-group-append"></div>
                         </div>
                         <div class="input-group">
-                            <div class="input-group-prepend"><span class="input-group-text"><ion-icon name="call"></ion-icon></span></div><input class="form-control" type="text" placeholder="No. HP">
+                            <div class="input-group-prepend"><span class="input-group-text"><ion-icon name="call"></ion-icon></span></div><input class="form-control" type="text" placeholder="No. HP" name="hp">
                             <div class="input-group-append"></div>
                         </div>
                     </div>
