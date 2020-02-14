@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Employee;
 use App\Menu;
 use App\User;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
@@ -18,9 +19,16 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $menu =  Menu::all();
+        $menu = Menu::all();
         return view('home', compact('menu'));
     }
+
+    public function admin() {
+        $menu = Menu::all();
+        $employee = Employee::all();
+        return view('admin', compact('menu', 'employee'));
+    }
+
     public function login(Request $request)
     {
         $credentials = $request->only('email', 'password');
