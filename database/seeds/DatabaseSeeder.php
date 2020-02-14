@@ -37,6 +37,7 @@ class DatabaseSeeder extends Seeder
                 'email' => $faker->email,
                 'password' => bcrypt($faker->shuffleString(24)),
                 'hp' => $faker->phoneNumber,
+                'email_verified_at' => $faker->date('Y-m-d', 'now'),
                 'position' => $faker->randomElement(['cashier', 'admin', 'chef', 'guest'])
             ]);
         }
