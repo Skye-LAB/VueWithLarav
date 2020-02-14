@@ -4,11 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Menu;
 use App\User;
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
+    use AuthenticatesUsers;
     /**
      * Display a listing of the resource.
      *
@@ -21,10 +23,11 @@ class HomeController extends Controller
     }
     public function login(Request $request)
     {
-        if (Auth::attempt($request->only('email', 'password'))) {
-            return redirect()->refresh();
+        $credentials = $request->only('email', 'password');
+        if (Auth::attempt($credentials)) {
+            return redirect('/');
         }
-        return redirect()->back();
+        return redirect()->back()->with('gagal', 'Anda Gagal Login!');
     }
     /**
      * Show the form for creating a new resource.
