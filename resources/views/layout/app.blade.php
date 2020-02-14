@@ -34,7 +34,7 @@
                     </div>
                 </form>
 
-                @auth()
+                @auth
                 <ul class="nav navbar-nav ml-auto">
                     <li class="dropdown nav-item"><a class="dropdown-toggle nav-link" data-toggle="dropdown"
                             aria-expanded="false" href="#">{{auth()->user()->username}}</a>
