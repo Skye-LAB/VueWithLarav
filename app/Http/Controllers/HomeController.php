@@ -23,17 +23,17 @@ class HomeController extends Controller
         return view('home', compact('menu'));
     }
 
-    public function admin() {
+    public function admin()
+    {
         $menu = Menu::all();
         $employee = Employee::all();
         return view('admin', compact('menu', 'employee'));
     }
 
-    public function login(Request $request)
+    public function auth(Request $request)
     {
-        $credentials = $request->only('email', 'password');
-        if (Auth::attempt($credentials)) {
-            return redirect('/');
+        if (Auth::attempt($request->only('email', 'password'))) {
+            return redirect('admin/menu');
         }
         return redirect()->back()->with('gagal', 'Anda Gagal Login!');
     }
