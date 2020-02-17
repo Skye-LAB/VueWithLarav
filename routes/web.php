@@ -20,6 +20,6 @@ Route::get('/', 'HomeController@index');
 Route::get('/admin', 'HomeController@admin');
 // Route::group(['middleware' => 'auth'], function () {
     Route::resource('/admin/menu', 'MenuController');
-    Route::resource('/admin/employee', 'EmployeeController');
+    // Route::resource('/admin/employee', 'EmployeeController');
 // });
 Route::post('login', 'HomeController@auth')->name('login');

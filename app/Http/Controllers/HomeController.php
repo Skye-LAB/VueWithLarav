@@ -28,14 +28,14 @@ class HomeController extends Controller
     {
         $menu = Menu::all();
         $employee = Employee::all();
-        $member = User::where('position','guest')->get();
-        return view('admin', compact('menu', 'employee', 'member'));
+        $user = User::where('position','guest')->get();
+        return view('admin', compact('menu', 'employee', 'user'));
     }
 
     public function auth(Request $request)
     {
         if (Auth::attempt($request->only('email', 'password'))) {
-            return redirect('admin/menu');
+            return redirect('admin');
         }
         return redirect()->back()->with('gagal', 'Anda Gagal Login!');
     }
@@ -68,7 +68,7 @@ class HomeController extends Controller
             'email' => $request->email,
             'password' => bcrypt($request->password),
             'hp' => $request->hp,
-            'position' => 'member'
+            'position' => 'guest'
         ]);
         return redirect()->back();
     }

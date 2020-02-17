@@ -147,7 +147,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-
+                                  @foreach ($employee as $k)
                                     <tr>
                                         <td>{{$loop->iteration}}</td>
                                         <td>{{$k->nama_employee}}</td>
@@ -183,7 +183,7 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                      @foreach($member as $d)
+                                      @foreach($user as $d)
                                       <tr>
                                           <td>{{$loop->iteration}}</td>
                                           <td>{{$d->username}}</td>

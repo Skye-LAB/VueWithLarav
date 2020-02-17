@@ -34,7 +34,7 @@
                 @auth
                 <ul class="nav navbar-nav ml-auto">
                     <li class="dropdown nav-item"><a class="dropdown-toggle nav-link" data-toggle="dropdown"
-                            aria-expanded="false" href="#">{{auth()->user()->username}}</a>
+                            aria-expanded="false" href="#">{{Auth::user()->username}}</a>
                         <div class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation"
                                 href="#">Change Password</a><a class="dropdown-item" role="presentation"
                                 href="#">Logout</a></div>
