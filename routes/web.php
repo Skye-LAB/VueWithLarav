@@ -14,11 +14,12 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
+Route::post('create', 'HomeController@store')->name('create');
+
 Route::get('/', 'HomeController@index');
 Route::get('/admin', 'HomeController@admin');
 // Route::group(['middleware' => 'auth'], function () {
     Route::resource('/admin/menu', 'MenuController');
     Route::resource('/admin/employee', 'EmployeeController');
 // });
-Route::post('create', 'HomeController@create');
 Route::post('login', 'HomeController@auth')->name('login');

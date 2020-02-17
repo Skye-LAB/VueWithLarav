@@ -67,9 +67,10 @@ class HomeController extends Controller
             'username' => $request->username,
             'email' => $request->email,
             'password' => bcrypt($request->password),
+            'hp' => $request->hp,
             'position' => 'member'
         ]);
-        return redirect()->refresh();
+        return redirect()->back();
     }
 
     /**
