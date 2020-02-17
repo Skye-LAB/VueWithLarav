@@ -7,6 +7,7 @@ use App\Menu;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -24,7 +25,8 @@ class HomeController extends Controller
     public function admin() {
         $menu = Menu::all();
         $employee = Employee::all();
-        return view('admin', compact('menu', 'employee'));
+        $member = User::where('position','guest')->get();
+        return view('admin', compact('menu', 'employee', 'member'));
     }
 
     public function login(Request $request)

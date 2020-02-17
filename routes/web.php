@@ -15,7 +15,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::resource('/', 'HomeController');
 Route::get('/admin', 'HomeController@admin');
-Route::group(['middleware' => 'auth'], function () {
-    Route::resource('/admin/menu', 'MenuController');
-    Route::resource('/admin/employee', 'EmployeeController');
+// Route::group(['middleware' => 'auth'], function () {
+//     Route::resource('/admin/menu', 'MenuController');
+//     Route::resource('/admin/employee', 'EmployeeController');
+// });
+
+Route::get('/chef', function() {
+  return view('chef');
 });

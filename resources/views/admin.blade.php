@@ -14,7 +14,7 @@
                 <div class="container">
                     <div class="row mt-4">
                         <div class="col">
-                        <a class="btn btn-primary action-button mr-1" role="button" href="#" data-toggle="modal" data-target="#addEM">Add Employee</a>
+                        <a class="btn btn-primary action-button mr-1" role="button" href="#" data-toggle="modal" data-target="#addEM">Add Menu</a>
                         <div class="modal fade" role="dialog" tabindex="-1" id="addEM">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
@@ -111,22 +111,25 @@
                                         <th>No</th>
                                         <th>Nama</th>
                                         <th>Email</th>
-                                        <th>Password</th>
+                                        {{-- <th>Password</th> --}}
                                         <th>No. Hp</th>
                                         <th>Position</th>
+                                        <th>Options</th>
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    @foreach($employee)
+                                    @foreach($employee as $k)
                                     <tr>
-                                        <td>Cell 1</td>
-                                        <td>Cell 2</td>
+                                        <td>{{$loop->iteration}}</td>
+                                        <td>{{$k->nama_employee}}</td>
+                                        <td>{{$k->email}}</td>
+                                        {{-- <td>{{$k->password}}</td> --}}
+                                        <td>{{$k->hp}}</td>
+                                        <td>{{$k->position}}</td>
+                                        <td><button class="btn btn-success" type="button">Edit</button>
+                                            <button class="btn btn-danger" type="button">Hapus</button></td>
                                     </tr>
                                     @endforeach
-                                    <tr>
-                                        <td>Cell 3</td>
-                                        <td>Cell 4</td>
-                                    </tr>
                                     </tbody>
                                 </table>
                             </div>
@@ -137,24 +140,32 @@
             <div class="tab-pane" role="tabpanel" id="tab-3">
                 <div class="container">
                     <div class="row mt-4">
-                        <div class="col"><button class="btn btn-primary" type="button">Button</button>
+                        <div class="col">
                             <div class="table-responsive">
                                 <table class="table mt-4">
                                     <thead>
                                     <tr>
-                                        <th>Column 1</th>
-                                        <th>Column 2</th>
+                                        <th>No.</th>
+                                        <th>Username</th>
+                                        <th>Email</th>
+                                        <th>No. HP</th>
+                                        <th>Position</th>
+                                        <th>Options</th>
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <tr>
-                                        <td>Cell 1</td>
-                                        <td>Cell 2</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Cell 3</td>
-                                        <td>Cell 4</td>
-                                    </tr>
+                                      @foreach($member as $d)
+                                      <tr>
+                                          <td>{{$loop->iteration}}</td>
+                                          <td>{{$d->username}}</td>
+                                          <td>{{$d->email}}</td>
+                                          {{-- <td>{{$d->password}}</td> --}}
+                                          <td>{{$d->hp}}</td>
+                                          <td>{{$d->position}}</td>
+                                          <td><button class="btn btn-success" type="button">Edit</button>
+                                              <button class="btn btn-danger" type="button">Hapus</button></td>
+                                      </tr>
+                                      @endforeach
                                     </tbody>
                                 </table>
                             </div>
