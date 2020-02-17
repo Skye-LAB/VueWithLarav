@@ -34,7 +34,7 @@
                 @auth
                 <ul class="nav navbar-nav ml-auto">
                     <li class="dropdown nav-item"><a class="dropdown-toggle nav-link" data-toggle="dropdown"
-                            aria-expanded="false" href="#">{{auth()->user()->name}}</a>
+                            aria-expanded="false" href="#">{{auth()->user()->username}}</a>
                         <div class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation"
                                 href="#">Change Password</a><a class="dropdown-item" role="presentation"
                                 href="#">Logout</a></div>
@@ -48,32 +48,36 @@
                 @endauth
             </div>
         </div>
-        </div>
     </nav>
     <div class="modal fade" role="dialog" tabindex="-1" id="signIn">
         <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title">Sign In</h4><button type="button" class="close" data-dismiss="modal"
-                        aria-label="Close"><span aria-hidden="true">×</span></button>
-                </div>
-                <div class="modal-body">
-                    <div class="input-group mb-2">
-                        <div class="input-group-prepend"><span class="input-group-text">
-                                <ion-icon name="person"></ion-icon>
-                            </span></div><input class="form-control" type="text" placeholder="Username" name="username">
-                        <div class="input-group-append"></div>
+            <form action="{{ route('login') }}" method="post">
+                @csrf
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Sign In</h4><button type="button" class="close" data-dismiss="modal"
+                            aria-label="Close"><span aria-hidden="true">×</span></button>
                     </div>
-                    <div class="input-group">
-                        <div class="input-group-prepend"><span class="input-group-text">
-                                <ion-icon name="lock-closed"></ion-icon>
-                            </span></div><input class="form-control" type="text" placeholder="Password" name="password">
-                        <div class="input-group-append"></div>
+                    <div class="modal-body">
+                        <div class="input-group mb-2">
+                            <div class="input-group-prepend"><span class="input-group-text">
+                                    <ion-icon name="person"></ion-icon>
+                                </span></div><input class="form-control" type="text" placeholder="Username"
+                                name="email">
+                            <div class="input-group-append"></div>
+                        </div>
+                        <div class="input-group">
+                            <div class="input-group-prepend"><span class="input-group-text">
+                                    <ion-icon name="lock-closed"></ion-icon>
+                                </span></div><input class="form-control" type="text" placeholder="Password"
+                                name="password">
+                            <div class="input-group-append"></div>
+                        </div>
+                        <div class="modal-footer"><button class="btn btn-primary" type="submit">Submit</button></div>
                     </div>
-                <div class="modal-footer"><button class="btn btn-primary" type="button">Submit</button></div>
-            </div>
+            </form>
         </div>
-        </div>
+    </div>
     </div>
     <div class="modal fade" role="dialog" tabindex="-1" id="signUp">
         <div class="modal-dialog" role="document">
@@ -112,11 +116,11 @@
                             <div class="input-group-append"></div>
                         </div>
                     </div>
-            <div class="modal-footer"><button class="btn btn-primary" type="submit">Submit</button></div>
+                    <div class="modal-footer"><button class="btn btn-primary" type="submit">Submit</button></div>
+                </div>
         </div>
+        </form>
     </div>
-</form>
-        </div>
     </div>
     </div>
     @yield('isi')

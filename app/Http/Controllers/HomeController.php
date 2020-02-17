@@ -5,12 +5,14 @@ namespace App\Http\Controllers;
 use App\Employee;
 use App\Menu;
 use App\User;
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
+    use AuthenticatesUsers;
     /**
      * Display a listing of the resource.
      *
@@ -22,19 +24,20 @@ class HomeController extends Controller
         return view('home', compact('menu'));
     }
 
-    public function admin() {
+    public function admin()
+    {
         $menu = Menu::all();
         $employee = Employee::all();
         $member = User::where('position','guest')->get();
         return view('admin', compact('menu', 'employee', 'member'));
     }
 
-    public function login(Request $request)
+    public function auth(Request $request)
     {
         if (Auth::attempt($request->only('email', 'password'))) {
-            return redirect()->refresh();
+            return redirect('admin/menu');
         }
-        return redirect()->back();
+        return redirect()->back()->with('gagal', 'Anda Gagal Login!');
     }
     /**
      * Show the form for creating a new resource.

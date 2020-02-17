@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Menu;
+use App\Employee;
 use Illuminate\Http\Request;
 
 class MenuController extends Controller
@@ -14,7 +15,9 @@ class MenuController extends Controller
      */
     public function index()
     {
-        //
+        $menu = Menu::all();
+        $employee = Employee::all();
+        return view('admin', compact('menu', 'employee'));
     }
 
     /**

@@ -11,15 +11,14 @@
 |
 */
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
-Route::resource('/', 'HomeController');
+Route::get('/', 'HomeController@index');
 Route::get('/admin', 'HomeController@admin');
 // Route::group(['middleware' => 'auth'], function () {
-//     Route::resource('/admin/menu', 'MenuController');
-//     Route::resource('/admin/employee', 'EmployeeController');
+    Route::resource('/admin/menu', 'MenuController');
+    Route::resource('/admin/employee', 'EmployeeController');
 // });
-
-Route::get('/chef', function() {
-  return view('chef');
-});
+Route::post('create', 'HomeController@create');
+Route::post('login', 'HomeController@auth')->name('login');
